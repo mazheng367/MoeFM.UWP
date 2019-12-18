@@ -1,0 +1,17 @@
+G:\MoeFM.UWP\MoeFM.UWP.Entities\bin\Debug\MoeFM.UWP.Entities.dll
+G:\MoeFM.UWP\MoeFM.UWP.Entities\bin\Debug\MoeFM.UWP.Entities.pdb
+G:\MoeFM.UWP\MoeFM.UWP.Entities\bin\Debug\MoeFM.UWP.Entities.pri
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\Debug\MoeFM.UWP.Entities.dll
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\Debug\MoeFM.UWP.Entities.pdb
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\Debug\priconfig.xml
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\Debug\priconfig.xml.intermediate
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\Debug\layout.resfiles
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\Debug\layout.resfiles.intermediate
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\Debug\resources.resfiles
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\Debug\resources.resfiles.intermediate
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\Debug\pri.resfiles
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\Debug\pri.resfiles.intermediate
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\Debug\qualifiers.txt
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\Debug\qualifiers.txt.intermediate
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\Debug\MultipleQualifiersPerDimensionFound.txt
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\Debug\MoeFM.UWP.Entities.csprojResolveAssemblyReference.cache

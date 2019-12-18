@@ -1,0 +1,17 @@
+G:\MoeFM.UWP\MoeFM.UWP.Entities\bin\x64\Release\MoeFM.UWP.Entities.dll
+G:\MoeFM.UWP\MoeFM.UWP.Entities\bin\x64\Release\MoeFM.UWP.Entities.pdb
+G:\MoeFM.UWP\MoeFM.UWP.Entities\bin\x64\Release\MoeFM.UWP.Entities.pri
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\x64\Release\MoeFM.UWP.Entities.dll
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\x64\Release\MoeFM.UWP.Entities.pdb
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\x64\Release\priconfig.xml
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\x64\Release\priconfig.xml.intermediate
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\x64\Release\layout.resfiles
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\x64\Release\layout.resfiles.intermediate
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\x64\Release\resources.resfiles
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\x64\Release\resources.resfiles.intermediate
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\x64\Release\pri.resfiles
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\x64\Release\pri.resfiles.intermediate
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\x64\Release\qualifiers.txt
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\x64\Release\qualifiers.txt.intermediate
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\x64\Release\MultipleQualifiersPerDimensionFound.txt
+G:\MoeFM.UWP\MoeFM.UWP.Entities\obj\x64\Release\MoeFM.UWP.Entities.csprojResolveAssemblyReference.cache

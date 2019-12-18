@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="MoeFM.UWP.Pages.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:uc="using:MoeFM.UWP.Controls"
+    mc:Ignorable="d">
+    <ScrollViewer Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" VerticalScrollBarVisibility="Auto" Style="{StaticResource ScrollViewerStyle}">
+        <Grid Padding="0,0,10,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <uc:UCMusicGrid x:Name="LstNewWiki" Grid.Row="0" DisplayTitle="最新专辑 · · ·" Refresh="LstNewWiki_OnRefresh"></uc:UCMusicGrid>
+            <uc:UCMusicGrid x:Name="LstHotMusic" Grid.Row="1" DisplayTitle="音乐热榜 · · ·" Refresh="LstHotMusic_OnRefresh"></uc:UCMusicGrid>
+            <uc:UCMusicGrid x:Name="LstHotRadio" Grid.Row="2" DisplayTitle="流行电台 · · ·" Refresh="LstHotRadio_OnRefresh" WikiType="Radio"></uc:UCMusicGrid>
+            <uc:UCMusicGrid x:Name="LstHotTagMusic" Grid.Row="3" DisplayTitle="热门标签  · · ·" Refresh="LstHotTagMusic_OnRefresh"></uc:UCMusicGrid>
+        </Grid>
+    </ScrollViewer>
+</Page>

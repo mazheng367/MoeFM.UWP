@@ -1,0 +1,137 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoeFM.UWP", "MoeFM.UWP\MoeFM.UWP.csproj", "{F38B95F8-A9B3-45B0-8F1B-0FD4E23B061D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoeFM.UWP.Common", "MoeFM.UWP.Common\MoeFM.UWP.Common.csproj", "{B78307CF-6267-4494-AA5D-14F2F45330ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoeFM.UWP.BackgroundTask", "MoeFM.UWP.BackgroundTask\MoeFM.UWP.BackgroundTask.csproj", "{E8191B09-1138-4A8F-A294-52369F7D137D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoeFM.UWP.Entities", "MoeFM.UWP.Entities\MoeFM.UWP.Entities.csproj", "{EDDBB32E-8D42-4A83-9491-88A75B1215FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoeFM.UWP.OAuth", "MoeFM.UWP.OAuth\MoeFM.UWP.OAuth.csproj", "{6D4BCC58-6724-478F-AA35-CD96BFD2E4A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F38B95F8-A9B3-45B0-8F1B-0FD4E23B061D}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{F38B95F8-A9B3-45B0-8F1B-0FD4E23B061D}.Debug|ARM.ActiveCfg = Debug|ARM
+		{F38B95F8-A9B3-45B0-8F1B-0FD4E23B061D}.Debug|ARM.Build.0 = Debug|ARM
+		{F38B95F8-A9B3-45B0-8F1B-0FD4E23B061D}.Debug|ARM.Deploy.0 = Debug|ARM
+		{F38B95F8-A9B3-45B0-8F1B-0FD4E23B061D}.Debug|x64.ActiveCfg = Debug|x64
+		{F38B95F8-A9B3-45B0-8F1B-0FD4E23B061D}.Debug|x64.Build.0 = Debug|x64
+		{F38B95F8-A9B3-45B0-8F1B-0FD4E23B061D}.Debug|x64.Deploy.0 = Debug|x64
+		{F38B95F8-A9B3-45B0-8F1B-0FD4E23B061D}.Debug|x86.ActiveCfg = Debug|x86
+		{F38B95F8-A9B3-45B0-8F1B-0FD4E23B061D}.Debug|x86.Build.0 = Debug|x86
+		{F38B95F8-A9B3-45B0-8F1B-0FD4E23B061D}.Debug|x86.Deploy.0 = Debug|x86
+		{F38B95F8-A9B3-45B0-8F1B-0FD4E23B061D}.Release|Any CPU.ActiveCfg = Release|x86
+		{F38B95F8-A9B3-45B0-8F1B-0FD4E23B061D}.Release|ARM.ActiveCfg = Release|ARM
+		{F38B95F8-A9B3-45B0-8F1B-0FD4E23B061D}.Release|ARM.Build.0 = Release|ARM
+		{F38B95F8-A9B3-45B0-8F1B-0FD4E23B061D}.Release|ARM.Deploy.0 = Release|ARM
+		{F38B95F8-A9B3-45B0-8F1B-0FD4E23B061D}.Release|x64.ActiveCfg = Release|x64
+		{F38B95F8-A9B3-45B0-8F1B-0FD4E23B061D}.Release|x64.Build.0 = Release|x64
+		{F38B95F8-A9B3-45B0-8F1B-0FD4E23B061D}.Release|x64.Deploy.0 = Release|x64
+		{F38B95F8-A9B3-45B0-8F1B-0FD4E23B061D}.Release|x86.ActiveCfg = Release|x86
+		{F38B95F8-A9B3-45B0-8F1B-0FD4E23B061D}.Release|x86.Build.0 = Release|x86
+		{F38B95F8-A9B3-45B0-8F1B-0FD4E23B061D}.Release|x86.Deploy.0 = Release|x86
+		{B78307CF-6267-4494-AA5D-14F2F45330ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B78307CF-6267-4494-AA5D-14F2F45330ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B78307CF-6267-4494-AA5D-14F2F45330ED}.Debug|ARM.ActiveCfg = Debug|ARM
+		{B78307CF-6267-4494-AA5D-14F2F45330ED}.Debug|ARM.Build.0 = Debug|ARM
+		{B78307CF-6267-4494-AA5D-14F2F45330ED}.Debug|x64.ActiveCfg = Debug|x64
+		{B78307CF-6267-4494-AA5D-14F2F45330ED}.Debug|x64.Build.0 = Debug|x64
+		{B78307CF-6267-4494-AA5D-14F2F45330ED}.Debug|x86.ActiveCfg = Debug|x86
+		{B78307CF-6267-4494-AA5D-14F2F45330ED}.Debug|x86.Build.0 = Debug|x86
+		{B78307CF-6267-4494-AA5D-14F2F45330ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B78307CF-6267-4494-AA5D-14F2F45330ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B78307CF-6267-4494-AA5D-14F2F45330ED}.Release|ARM.ActiveCfg = Release|ARM
+		{B78307CF-6267-4494-AA5D-14F2F45330ED}.Release|ARM.Build.0 = Release|ARM
+		{B78307CF-6267-4494-AA5D-14F2F45330ED}.Release|x64.ActiveCfg = Release|x64
+		{B78307CF-6267-4494-AA5D-14F2F45330ED}.Release|x64.Build.0 = Release|x64
+		{B78307CF-6267-4494-AA5D-14F2F45330ED}.Release|x86.ActiveCfg = Release|x86
+		{B78307CF-6267-4494-AA5D-14F2F45330ED}.Release|x86.Build.0 = Release|x86
+		{E8191B09-1138-4A8F-A294-52369F7D137D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8191B09-1138-4A8F-A294-52369F7D137D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8191B09-1138-4A8F-A294-52369F7D137D}.Debug|ARM.ActiveCfg = Debug|ARM
+		{E8191B09-1138-4A8F-A294-52369F7D137D}.Debug|ARM.Build.0 = Debug|ARM
+		{E8191B09-1138-4A8F-A294-52369F7D137D}.Debug|x64.ActiveCfg = Debug|x64
+		{E8191B09-1138-4A8F-A294-52369F7D137D}.Debug|x64.Build.0 = Debug|x64
+		{E8191B09-1138-4A8F-A294-52369F7D137D}.Debug|x86.ActiveCfg = Debug|x86
+		{E8191B09-1138-4A8F-A294-52369F7D137D}.Debug|x86.Build.0 = Debug|x86
+		{E8191B09-1138-4A8F-A294-52369F7D137D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8191B09-1138-4A8F-A294-52369F7D137D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8191B09-1138-4A8F-A294-52369F7D137D}.Release|ARM.ActiveCfg = Release|ARM
+		{E8191B09-1138-4A8F-A294-52369F7D137D}.Release|ARM.Build.0 = Release|ARM
+		{E8191B09-1138-4A8F-A294-52369F7D137D}.Release|x64.ActiveCfg = Release|x64
+		{E8191B09-1138-4A8F-A294-52369F7D137D}.Release|x64.Build.0 = Release|x64
+		{E8191B09-1138-4A8F-A294-52369F7D137D}.Release|x86.ActiveCfg = Release|x86
+		{E8191B09-1138-4A8F-A294-52369F7D137D}.Release|x86.Build.0 = Release|x86
+		{EDDBB32E-8D42-4A83-9491-88A75B1215FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDDBB32E-8D42-4A83-9491-88A75B1215FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDDBB32E-8D42-4A83-9491-88A75B1215FA}.Debug|ARM.ActiveCfg = Debug|ARM
+		{EDDBB32E-8D42-4A83-9491-88A75B1215FA}.Debug|ARM.Build.0 = Debug|ARM
+		{EDDBB32E-8D42-4A83-9491-88A75B1215FA}.Debug|x64.ActiveCfg = Debug|x64
+		{EDDBB32E-8D42-4A83-9491-88A75B1215FA}.Debug|x64.Build.0 = Debug|x64
+		{EDDBB32E-8D42-4A83-9491-88A75B1215FA}.Debug|x86.ActiveCfg = Debug|x86
+		{EDDBB32E-8D42-4A83-9491-88A75B1215FA}.Debug|x86.Build.0 = Debug|x86
+		{EDDBB32E-8D42-4A83-9491-88A75B1215FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDDBB32E-8D42-4A83-9491-88A75B1215FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDDBB32E-8D42-4A83-9491-88A75B1215FA}.Release|ARM.ActiveCfg = Release|ARM
+		{EDDBB32E-8D42-4A83-9491-88A75B1215FA}.Release|ARM.Build.0 = Release|ARM
+		{EDDBB32E-8D42-4A83-9491-88A75B1215FA}.Release|x64.ActiveCfg = Release|x64
+		{EDDBB32E-8D42-4A83-9491-88A75B1215FA}.Release|x64.Build.0 = Release|x64
+		{EDDBB32E-8D42-4A83-9491-88A75B1215FA}.Release|x86.ActiveCfg = Release|x86
+		{EDDBB32E-8D42-4A83-9491-88A75B1215FA}.Release|x86.Build.0 = Release|x86
+		{6D4BCC58-6724-478F-AA35-CD96BFD2E4A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D4BCC58-6724-478F-AA35-CD96BFD2E4A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D4BCC58-6724-478F-AA35-CD96BFD2E4A6}.Debug|ARM.ActiveCfg = Debug|ARM
+		{6D4BCC58-6724-478F-AA35-CD96BFD2E4A6}.Debug|ARM.Build.0 = Debug|ARM
+		{6D4BCC58-6724-478F-AA35-CD96BFD2E4A6}.Debug|x64.ActiveCfg = Debug|x64
+		{6D4BCC58-6724-478F-AA35-CD96BFD2E4A6}.Debug|x64.Build.0 = Debug|x64
+		{6D4BCC58-6724-478F-AA35-CD96BFD2E4A6}.Debug|x86.ActiveCfg = Debug|x86
+		{6D4BCC58-6724-478F-AA35-CD96BFD2E4A6}.Debug|x86.Build.0 = Debug|x86
+		{6D4BCC58-6724-478F-AA35-CD96BFD2E4A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D4BCC58-6724-478F-AA35-CD96BFD2E4A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D4BCC58-6724-478F-AA35-CD96BFD2E4A6}.Release|ARM.ActiveCfg = Release|ARM
+		{6D4BCC58-6724-478F-AA35-CD96BFD2E4A6}.Release|ARM.Build.0 = Release|ARM
+		{6D4BCC58-6724-478F-AA35-CD96BFD2E4A6}.Release|x64.ActiveCfg = Release|x64
+		{6D4BCC58-6724-478F-AA35-CD96BFD2E4A6}.Release|x64.Build.0 = Release|x64
+		{6D4BCC58-6724-478F-AA35-CD96BFD2E4A6}.Release|x86.ActiveCfg = Release|x86
+		{6D4BCC58-6724-478F-AA35-CD96BFD2E4A6}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://mycodesforcloud.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MoeFM.UWP\\MoeFM.UWP.csproj
+		SccProjectName1 = MoeFM.UWP
+		SccLocalPath1 = MoeFM.UWP
+		SccProjectUniqueName2 = MoeFM.UWP.Common\\MoeFM.UWP.Common.csproj
+		SccProjectName2 = MoeFM.UWP.Common
+		SccLocalPath2 = MoeFM.UWP.Common
+		SccProjectUniqueName3 = MoeFM.UWP.BackgroundTask\\MoeFM.UWP.BackgroundTask.csproj
+		SccProjectName3 = MoeFM.UWP.BackgroundTask
+		SccLocalPath3 = MoeFM.UWP.BackgroundTask
+		SccProjectUniqueName4 = MoeFM.UWP.Entities\\MoeFM.UWP.Entities.csproj
+		SccProjectName4 = MoeFM.UWP.Entities
+		SccLocalPath4 = MoeFM.UWP.Entities
+		SccProjectUniqueName5 = MoeFM.UWP.OAuth\\MoeFM.UWP.OAuth.csproj
+		SccProjectName5 = MoeFM.UWP.OAuth
+		SccLocalPath5 = MoeFM.UWP.OAuth
+	EndGlobalSection
+EndGlobal

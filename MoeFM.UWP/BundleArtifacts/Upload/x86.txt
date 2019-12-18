@@ -1,0 +1,1 @@
+MainPackage=G:\MoeFM.UWP\MoeFM.UWP\bin\x86\Release\Upload\MoeFM.UWP_2.1.35.0_x86.appx

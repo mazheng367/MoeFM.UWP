@@ -1,0 +1,47 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+    <Style x:Key="GridViewItemStyle1" TargetType="GridViewItem">
+        <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+        <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
+        <Setter Property="TabNavigation" Value="Local"/>
+        <Setter Property="IsHoldingEnabled" Value="True"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0,0,4,4"/>
+        <Setter Property="MinWidth" Value="{ThemeResource GridViewItemMinWidth}"/>
+        <Setter Property="MinHeight" Value="{ThemeResource GridViewItemMinHeight}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="GridViewItem">
+                    <ListViewItemPresenter CheckBrush="{ThemeResource SystemControlForegroundBaseMediumHighBrush}" 
+                                           ContentMargin="{TemplateBinding Padding}" 
+                                           CheckMode="Overlay" 
+                                           ContentTransitions="{TemplateBinding ContentTransitions}" 
+                                           CheckBoxBrush="{ThemeResource SystemControlBackgroundChromeMediumBrush}" 
+                                           DragForeground="{ThemeResource ListViewItemDragForegroundThemeBrush}" 
+                                           DragOpacity="{ThemeResource ListViewItemDragThemeOpacity}" 
+                                           DragBackground="{ThemeResource ListViewItemDragBackgroundThemeBrush}" 
+                                           DisabledOpacity="{ThemeResource ListViewItemDisabledThemeOpacity}" 
+                                           FocusBorderBrush="#0C8EF6" 
+                                           FocusSecondaryBorderBrush="#0C8EF6"
+                                           HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                           PointerOverForeground="{ThemeResource SystemControlForegroundBaseHighBrush}" 
+                                           PressedBackground="{ThemeResource SystemControlHighlightListMediumBrush}" 
+                                           PlaceholderBackground="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}" 
+                                           PointerOverBackground="{ThemeResource SystemControlHighlightListLowBrush}" 
+                                           ReorderHintOffset="{ThemeResource GridViewItemReorderHintThemeOffset}" 
+                                           SelectedPressedBackground="#FF0C8EF6"
+                                           SelectionCheckMarkVisualEnabled="True" 
+                                           SelectedForeground="{ThemeResource SystemControlForegroundBaseHighBrush}" 
+                                           SelectedPointerOverBackground="#FF0C8EF6"
+                                           SelectedBackground="#FF0C8EF6" 
+                                           VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,2 @@
+MainPackage=G:\MoeFM.UWP\MoeFM.UWP\bin\x86\Release\MoeFM.UWP_2.1.35.0_x86.appx
+SymbolPackage=G:\MoeFM.UWP\MoeFM.UWP\AppPackages\MoeFM.UWP_2.1.35.0_Test\MoeFM.UWP_2.1.35.0_x86.appxsym

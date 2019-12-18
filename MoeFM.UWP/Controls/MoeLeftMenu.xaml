@@ -1,0 +1,107 @@
+﻿<UserControl
+    x:Class="MoeFM.UWP.Controls.MoeLeftMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignHeight="600" d:DesignWidth="320"
+    xmlns:converter="using:MoeFM.UWP.Coverter">
+    <UserControl.Resources>
+        <converter:BooleanVisibilityConverter x:Key="VisibilityConverter"/>
+    </UserControl.Resources>
+    <Grid Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="48"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="1" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0">萌否电台FM</TextBlock>
+        <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ListView x:Name="LsvMenuItem" Grid.Row="0" ItemClick="lsvMenuItem_ItemClick" IsItemClickEnabled="True" ItemContainerStyle="{StaticResource ListViewItemStyle}">
+                <ListViewItem IsSelected="True">
+                    <StackPanel Orientation="Horizontal" Height="48">
+                        <SymbolIcon Symbol="Home" Style="{StaticResource IconStyle}"/>
+                        <TextBlock Text="首页" VerticalAlignment="Center" Margin="22,0,0,0"></TextBlock>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem>
+                    <StackPanel Orientation="Horizontal" Height="48">
+                        <SymbolIcon Symbol="Rotate" Style="{StaticResource IconStyle}"/>
+                        <TextBlock Text="专辑" VerticalAlignment="Center" Margin="22,0,0,0"></TextBlock>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem >
+                    <StackPanel Orientation="Horizontal" Height="48">
+                        <SymbolIcon Symbol="Audio" Style="{StaticResource IconStyle}"/>
+                        <TextBlock Text="电台" VerticalAlignment="Center" Margin="22,0,0,0" SelectionHighlightColor="Black"></TextBlock>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem>
+                    <StackPanel Orientation="Horizontal" Height="48">
+                        <SymbolIcon Symbol="Zoom" Style="{StaticResource IconStyle}"/>
+                        <TextBlock Text="搜索" VerticalAlignment="Center" Margin="22,0,0,0"></TextBlock>
+                    </StackPanel>
+                </ListViewItem>
+            </ListView>
+            <Border Name="Border1" BorderThickness="0,1,0,0" BorderBrush="#4C977878" Grid.Row="1" Margin="5,10,5,0" HorizontalAlignment="Left" Width="320" Visibility="{x:Bind IsLogin,Converter={StaticResource VisibilityConverter},Mode=OneWay}">
+                <TextBlock Name="LblMyCollectionTip" FontSize="12" Foreground="#4C000000" Text="我的收藏" Margin="5,5,0,0"></TextBlock>
+            </Border>
+            <ListView x:Name="LsvMyCollection" Grid.Row="2" IsItemClickEnabled="True" Padding="0,0,0,10" ItemClick="lsvMyCollection_ItemClick" ItemContainerStyle="{StaticResource ListViewItemStyle}" Visibility="{x:Bind IsLogin,Converter={StaticResource VisibilityConverter},Mode=OneWay}">
+                <ListViewItem>
+                    <StackPanel Orientation="Horizontal" Height="48" Tag="Music">
+                        <FontIcon Margin="5,0,0,0" FontSize="14" Glyph="" FontFamily="Segoe MDL2 Assets"/>
+                        <TextBlock Text="我的收藏" VerticalAlignment="Center" Margin="27,0,0,0" FontSize="13"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Visibility="Collapsed">
+                    <StackPanel Orientation="Horizontal" Height="48" Tag="History">
+                        <FontIcon Margin="5,0,0,0" FontSize="14" Glyph="" FontFamily="Segoe MDL2 Assets"/>
+                        <TextBlock Text="我的音乐" VerticalAlignment="Center" Margin="27,0,0,0" FontSize="13"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Visibility="Collapsed">
+                    <StackPanel Orientation="Horizontal" Height="48" Tag="Download">
+                        <SymbolIcon Symbol="SolidStar" Style="{StaticResource IconStyle}"/>
+                        <TextBlock Text="下载管理" VerticalAlignment="Center" Margin="22,0,0,0" FontSize="13"/>
+                    </StackPanel>
+                </ListViewItem>
+            </ListView>
+            <Border Name="Border2" BorderThickness="0,1,0,0" BorderBrush="#4C977878" Grid.Row="3" Margin="5,0,5,0" HorizontalAlignment="Left" Width="320"/>
+            <ListView x:Name="LsvSystemSettings" Grid.Row="4" IsItemClickEnabled="True" VerticalAlignment="Bottom" Padding="0,0,0,10" ItemClick="lsvSystemSettings_ItemClick" ItemContainerStyle="{StaticResource ListViewItemStyle}">
+                <ListViewItem Visibility="{x:Bind IsLogin,Converter={StaticResource VisibilityConverter},Mode=OneWay}">
+                    <StackPanel Orientation="Horizontal" Height="48">
+                        <Ellipse Width="23" Height="23" Margin="0,3,0,0">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="{x:Bind UserInfo.Avatar,Mode=OneWay}"></ImageBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <TextBlock Text="{x:Bind UserInfo.Name,Mode=OneWay}" VerticalAlignment="Center" Margin="22,0,0,0" FontSize="13"></TextBlock>
+                        <HyperlinkButton FontSize="12" Margin="10,0,0,0" Click="BtnLogout_OnClick">注销</HyperlinkButton>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem Visibility="{x:Bind IsLogin,Converter={StaticResource VisibilityConverter},Mode=OneWay,ConverterParameter=not}">
+                    <StackPanel Orientation="Horizontal" Height="48">
+                        <SymbolIcon Symbol="AddFriend" Style="{StaticResource IconStyle}"/>
+                        <TextBlock Text="登录" VerticalAlignment="Center" Margin="22,0,0,0"></TextBlock>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem>
+                    <StackPanel Orientation="Horizontal" Height="48">
+                        <SymbolIcon Symbol="Setting" Style="{StaticResource IconStyle}"/>
+                        <TextBlock Text="设置" VerticalAlignment="Center" Margin="22,0,0,0"></TextBlock>
+                    </StackPanel>
+                </ListViewItem>
+            </ListView>
+        </Grid>
+    </Grid>
+</UserControl>

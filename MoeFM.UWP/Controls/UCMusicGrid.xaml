@@ -1,0 +1,50 @@
+﻿<UserControl
+    x:Class="MoeFM.UWP.Controls.UCMusicGrid"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:MoeFM.UWP.ViewModel"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400" SizeChanged="UCHomePage_OnSizeChanged">
+    <UserControl.Resources>
+        <Style x:Key="HpItemContainer" TargetType="StackPanel">
+            <Setter Property="Padding" Value="10"></Setter>
+        </Style>
+        <Style x:Key="SectionTitleStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="#0066cc"/>
+            <Setter Property="Margin" Value="5,0,0,0"/>
+            <Setter Property="Padding" Value="0,5"/>
+        </Style>
+        <DataTemplate x:Key="NewMusicTemplate" x:DataType="vm:HomePageViewModel">
+            <Grid Margin="10,10,10,10" ToolTipService.ToolTip="{x:Bind Title}" x:Name="TemplateGrid" MaxWidth="180">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Width="{Binding ElementName=TemplateGrid,Path=Width}" Height="{Binding ElementName=TemplateGrid,Path=Width}" Source="{x:Bind Cover}" Stretch="UniformToFill"/>
+                <TextBlock Grid.Row="1" Text="{x:Bind Title}" TextWrapping="NoWrap" Margin="0,5,0,0" FontSize="14" VerticalAlignment="Center"></TextBlock>
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+    <StackPanel Style="{StaticResource HpItemContainer}">
+        <Grid BorderBrush="#26000000" BorderThickness="0,0,0,1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border BorderThickness="6,0,0,0" BorderBrush="#FF0066CC">
+                <TextBlock Style="{StaticResource SectionTitleStyle}" Name="TxtDisplayTitle"></TextBlock>
+            </Border>
+            <HyperlinkButton Grid.Column="1" FontSize="12" Foreground="#59000000" Padding="0" Margin="0,2,0,0" Click="ButtonBase_OnClick">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontSize="12">刷新</TextBlock>
+                    <TextBlock FontSize="20" Margin="0,-8,0,0">⟳</TextBlock>
+                </StackPanel>
+            </HyperlinkButton>
+        </Grid>
+        <GridView x:Name="GridViewMusicInfo" Margin="0,10,0,0" ItemTemplate="{StaticResource NewMusicTemplate}" ItemContainerStyle="{StaticResource GridViewItemStyle1}" SelectionMode="None" IsItemClickEnabled="True" ItemClick="GridViewMusicInfo_OnItemClick"/>
+    </StackPanel>
+</UserControl>

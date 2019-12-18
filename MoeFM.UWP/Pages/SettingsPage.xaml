@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="MoeFM.UWP.Pages.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Pivot Title="设置">
+            <PivotItem Header="关于">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <RichTextBlock Padding="10" FontSize="16" TextWrapping="Wrap" TextIndent="36" IsTextSelectionEnabled="True" LineHeight="26">
+                        <Paragraph Margin="0,10,0,0">本APP为萌否电台第三方APP，如果觉得还可以请给个好评噢~~~~</Paragraph>
+                        <Paragraph Margin="0,10,0,0">萌否电台(moe.fm)是一个专注于发现、欣赏及分享动漫音乐的新世代社会化音乐平台，致力于为广大动漫音乐爱好者打造高品质的音乐网络。</Paragraph>
+                    </RichTextBlock>
+                    <Image Grid.Row="1" Source="../Images/moefou_fm.png" Width="186" Height="236" HorizontalAlignment="Right" Margin="10"></Image>
+                </Grid>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</Page>

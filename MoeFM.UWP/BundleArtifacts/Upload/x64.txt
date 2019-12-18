@@ -1,0 +1,2 @@
+MainPackage=G:\MoeFM.UWP\MoeFM.UWP\bin\x64\Release\Upload\MoeFM.UWP_2.1.35.0_x64.appx
+ResourcePack=G:\MoeFM.UWP\MoeFM.UWP\_scale-100.appx

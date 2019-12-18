@@ -1,0 +1,319 @@
+﻿<Page
+    x:Class="MoeFM.UWP.Pages.WikiDetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converter="using:MoeFM.UWP.Coverter"
+    xmlns:selector="using:MoeFM.UWP.Selector"
+    xmlns:viewModel="using:MoeFM.UWP.ViewModel"
+    xmlns:sys="using:System.Collections">
+    <Page.Resources>
+
+        <converter:ContentValueConverter x:Key="CvConverter" />
+        <converter:ItemPlayColorConverter x:Key="ColorConverter" />
+        <converter:ItemPlayActionConverter x:Key="ActionConvter" />
+        <converter:BooleanVisibilityConverter x:Key="BooleanVisConverter" />
+        <Style x:Key="CollapseButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <StackPanel>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualStateGroup.States>
+                                        <VisualState x:Name="Normal" />
+                                        <VisualState x:Name="PointerOver">
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="TxtContent"
+                                                                               Storyboard.TargetProperty="Foreground">
+                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="#CC000000" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup.States>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter Name="TxtContent" FontFamily="Segoe UI Symbol" Foreground="#7F000000"
+                                              BorderThickness="0" />
+                        </StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="AltItemStyle" TargetType="ListViewItem" BasedOn="{StaticResource ListViewItemWikiDetailStyle}">
+            <Setter Property="Background" Value="#0C000000" />
+        </Style>
+        <Style x:Key="DiabledItemStyle" TargetType="ListViewItem"
+               BasedOn="{StaticResource ListViewItemWikiDetailStyle}">
+            <Setter Property="Foreground" Value="#4C000000" />
+            <Setter Property="Background" Value="#19000000" />
+        </Style>
+        <Style x:Key="MusicItemTextStyle" TargetType="TextBlock">
+            <Setter Property="IsTextSelectionEnabled" Value="False" />
+            <Setter Property="Foreground" Value="#7F000000"/>
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="TextWrapping" Value="NoWrap" />
+            <Setter Property="TextTrimming" Value="WordEllipsis" />
+        </Style>
+        <Style x:Key="ActionButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Grid x:Name="RootGrid" BorderThickness="1" CornerRadius="2" Width="{TemplateBinding Width}"
+                              Height="{TemplateBinding Height}">
+                            <Grid.BorderBrush>
+                                <SolidColorBrush x:Name="GridBrush" Color="#4C000000" />
+                            </Grid.BorderBrush>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommomState">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <PointerDownThemeAnimation TargetName="RootGrid" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="PointerUp">
+                                        <Storyboard>
+                                            <PointerUpThemeAnimation TargetName="RootGrid" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="GridBrush" Storyboard.TargetProperty="Color">
+                                                <DiscreteColorKeyFrame Value="#7F000000" KeyTime="0" />
+                                            </ColorAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter FontSize="13" Padding="0,3,0,3" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ItemActionButton" TargetType="Button">
+            <Setter Property="Width" Value="26"></Setter>
+            <Setter Property="Height" Value="26"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Grid x:Name="CP" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <PointerDownThemeAnimation TargetName="CP"></PointerDownThemeAnimation>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="PointerUp">
+                                        <Storyboard>
+                                            <PointerUpThemeAnimation TargetName="CP"></PointerUpThemeAnimation>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Ellipse Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Stroke="White"></Ellipse>
+                            <ContentPresenter Padding="{TemplateBinding Padding}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <DataTemplate x:Key="SubItemTemplate" x:DataType="viewModel:SubItemViewModel">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="80" />
+                </Grid.ColumnDefinitions>
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="{x:Bind RowIndex,Mode=OneWay}" Style="{StaticResource MusicItemTextStyle}" Visibility="{x:Bind CurrentPlaying,Mode=OneWay,Converter={StaticResource BooleanVisConverter},ConverterParameter=not}"></TextBlock>
+                </StackPanel>
+                <TextBlock Grid.Column="1" FontSize="13" TextWrapping="NoWrap" HorizontalAlignment="Stretch"
+                           VerticalAlignment="Center" TextTrimming="WordEllipsis" Margin="0,0,20,0"
+                           Text="{x:Bind Title}" />
+                <TextBlock Grid.Column="2" Style="{StaticResource MusicItemTextStyle}" Text="{x:Bind WikiName}" />
+                <TextBlock Grid.Column="3" Style="{StaticResource MusicItemTextStyle}" HorizontalAlignment="Right" Width="60" Text="{x:Bind Time}" />
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="SubItemSelectedTemplate" x:DataType="viewModel:SubItemViewModel">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="80" />
+                </Grid.ColumnDefinitions>
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="{x:Bind RowIndex,Mode=OneWay}" Style="{StaticResource MusicItemTextStyle}" Visibility="{x:Bind CurrentPlaying,Mode=OneWay,Converter={StaticResource BooleanVisConverter},ConverterParameter=not}"></TextBlock>
+                </StackPanel>
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="100" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="13" TextWrapping="NoWrap" TextTrimming="WordEllipsis" Text="{x:Bind Title}" />
+                    <StackPanel Width="100" Grid.Column="1" Margin="0,1,0,0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Tapped="WikiItem_OnTapped">
+                        <Button Padding="1,0,0,2" Background="Transparent" Style="{StaticResource ItemActionButton}" ToolTipService.ToolTip="播放" Visibility="{x:Bind CanPlay,Converter={StaticResource BooleanVisConverter}}">
+                            <Button.Content>
+                                <FontIcon VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Tag="Play" Glyph="▷" Foreground="White" FontFamily="Segoe UI Symbol"/>
+                            </Button.Content>
+                        </Button>
+                        <Button Padding="0,0,1,0" Margin="20,0,0,0" Style="{StaticResource ItemActionButton}" ToolTipService.ToolTip="收藏">
+                            <Button.Content>
+                                <FontIcon VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" Tag="Collect" Foreground="White" Glyph="{x:Bind Fav,Converter={StaticResource ActionConvter}}" FontFamily="Segoe UI Symbol"/>
+                            </Button.Content>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+                <TextBlock Grid.Column="2" Style="{StaticResource MusicItemTextStyle}" Text="{x:Bind WikiName}" />
+                <TextBlock Grid.Column="3" Style="{StaticResource MusicItemTextStyle}" HorizontalAlignment="Right" Text="{x:Bind Time}" Width="60" />
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="20,0,15,0">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="650" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="320" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="ImgCover.Width" Value="96" />
+                        <Setter Target="ImgCover.Height" Value="96" />
+                        <Setter Target="ImgCoverBorder.Width" Value="96" />
+                        <Setter Target="ImgCoverBorder.Height" Value="96" />
+                        <Setter Target="ImgCoverBorder.(Grid.RowSpan)" Value="1" />
+                        <Setter Target="GridDescription.(Grid.Row)" Value="1" />
+                        <Setter Target="GridDescription.(Grid.Column)" Value="0" />
+                        <Setter Target="GridDescription.(Grid.ColumnSpan)" Value="2" />
+                        <Setter Target="GridDescription.Margin" Value="0,5,10,0" />
+                        <Setter Target="TxtWikiTitle.FontSize" Value="16" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" FontSize="12" Margin="0,15,0,15" Foreground="#99000000">专辑</TextBlock>
+        <Grid Name="GridWikiDetail" Grid.Row="1" BorderBrush="Black">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Border Name="ImgCoverBorder" BorderThickness="1" BorderBrush="#33000000" Grid.Column="0" Width="192"
+                    Height="192" VerticalAlignment="Top" Grid.Row="0" Grid.RowSpan="2">
+                <Image Name="ImgCover" Width="192" Height="192" Source="{x:Bind ViewModel.Cover,Mode=OneWay}" />
+            </Border>
+            <Grid Grid.Row="0" Grid.Column="1" Margin="20,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="24" />
+                    <RowDefinition Height="24" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <TextBlock FontSize="18" Name="TxtWikiTitle" Grid.Row="0" VerticalAlignment="Top" TextWrapping="NoWrap"
+                           TextTrimming="WordEllipsis" Text="{x:Bind ViewModel.WikiTitle,Mode=OneWay}"
+                           ToolTipService.ToolTip="{x:Bind ViewModel.WikiTitle,Mode=OneWay}" />
+                <TextBlock FontSize="14" Name="TxtWikiArtist" Grid.Row="1" VerticalAlignment="Top"
+                           TextWrapping="NoWrap" TextTrimming="WordEllipsis"
+                           Text="{x:Bind ViewModel.WikiArtist,Mode=OneWay}"
+                           ToolTipService.ToolTip="{x:Bind ViewModel.WikiArtist,Mode=OneWay}" />
+                <StackPanel Grid.Row="2" VerticalAlignment="Center" Orientation="Horizontal" Tapped="StackPanel_Tapped">
+                    <Button Style="{StaticResource ActionButtonStyle}" Tag="play">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Padding="10,0,15,0" Background="Transparent">
+                                <SymbolIcon Symbol="Play"/>
+                                <TextBlock Margin="5,1,0,0">播放</TextBlock>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button Margin="20,0,0,0" Style="{StaticResource ActionButtonStyle}" Tag="collection">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Padding="11.5,0,15,0" Height="20" Background="Transparent">
+                                <FontIcon
+                                    Glyph="{x:Bind ViewModel.SubFav,Converter={StaticResource ActionConvter},Mode=OneWay}"
+                                    Foreground="{x:Bind ViewModel.SubFav,Converter={StaticResource ColorConverter},ConverterParameter=black,Mode=OneWay}"
+                                    FontFamily="Segoe UI Symbol" FontSize="16"/>
+                                <TextBlock Margin="7.5,1,0,0">收藏</TextBlock>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button Margin="20,0,0,0" Style="{StaticResource ActionButtonStyle}" Tag="pin">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Padding="10,0,15,0" Background="Transparent">
+                                <SymbolIcon Symbol="Pin"/>
+                                <TextBlock Margin="5,1,0,0">固定</TextBlock>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Grid Name="GridDescription" Grid.Column="1" Grid.Row="1" Height="96" VerticalAlignment="Top"
+                  Margin="20,0,10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <ScrollViewer Name="ViewerDescription" VerticalScrollBarVisibility="Hidden"
+                              VerticalScrollMode="Disabled" SizeChanged="ViewerDescription_OnSizeChanged">
+                    <RichTextBlock Name="TxtDescription" FontSize="13" Padding="0,0,10,0"
+                                   IsTextSelectionEnabled="False" Foreground="#7F000000" CharacterSpacing="30"
+                                   TextTrimming="WordEllipsis">
+                        <Paragraph>
+                            <InlineUIContainer>
+                                <TextBlock Foreground="Black">简介：</TextBlock>
+                            </InlineUIContainer>
+                            <InlineUIContainer>
+                                <TextBlock TextWrapping="Wrap" Text="{x:Bind ViewModel.Description,Mode=OneWay}"
+                                           TextTrimming="WordEllipsis" />
+                            </InlineUIContainer>
+                        </Paragraph>
+                    </RichTextBlock>
+                </ScrollViewer>
+                <StackPanel Name="PanelCollapse" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Bottom">
+                    <Button Name="BtnCollapse" Style="{StaticResource CollapseButtonStyle}"
+                            Content="{Binding ScrollableHeight,ElementName=ViewerDescription,Converter={StaticResource CvConverter}}"
+                            Click="BtnCollapse_OnClick" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="0" Margin="0,16,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock FontSize="12" Margin="0,5,0,5" Foreground="#99000000">曲目列表（没有上传的曲目不能播放哦~）</TextBlock>
+            <ListView Grid.Row="1" x:Name="LsvSongList" ItemTemplate="{StaticResource SubItemTemplate}" SelectionChanged="LsvSongList_OnSelectionChanged" IsDoubleTapEnabled="True" DoubleTapped="LsvSongList_OnDoubleTapped" 
+                     
+                      >
+                <ListView.ItemContainerStyleSelector>
+                    <selector:ListViewItemStyleSelector ItemStyle="{StaticResource ListViewItemWikiDetailStyle}" AlternativeItemStyle="{StaticResource AltItemStyle}" />
+                </ListView.ItemContainerStyleSelector>
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <ItemsStackPanel />
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+            </ListView>
+        </Grid>
+    </Grid>
+</Page>
